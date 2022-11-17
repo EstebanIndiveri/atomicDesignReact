@@ -1,0 +1,26 @@
+.button {
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  display: block;
+  font-family: var(--base-font-family);
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  box-shadow: 0px 0px 3px 1px #838383;
+}
+.small {
+  padding: 0.5em 0.6em;
+}
+
+.medium {
+  padding: 1.1em 1.3em;
+}
+
+.large {
+  padding: 1.7em 2.4em;
+}
