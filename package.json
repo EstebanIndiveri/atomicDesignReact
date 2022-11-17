@@ -113,6 +113,10 @@
   "title": "boilerplate-react",
   "jest": {
     "resetMocks": true,
+    "coveragePathIgnorePatterns" : [
+      "src/components/UI/atoms/Button/Button.stories.tsx",
+      "src/components/UI/atoms/Heading/Heading.stories.tsx"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/reportWebVitals.ts",
