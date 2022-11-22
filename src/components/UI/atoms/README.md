@@ -29,6 +29,8 @@ The five stages of atomic design are:
 
 <img src="https://atomicdesign.bradfrost.com/images/content/atomic-design-atoms.png" alt="atom_design_img" height="300px"/>
 
+<img src="https://atomicdesign.bradfrost.com/images/content/atoms-form-elements.png" alt="atom_design_img" height="300px"/>
+
 <div style="text-align:justify;">
 <p style="text-decoration:underline;font-weight:bold">The first step is building atoms. Atoms are buttons, labels, inputs</p>
 <p>They are all small items that are used widely across a website
