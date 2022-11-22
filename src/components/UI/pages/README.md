@@ -50,4 +50,10 @@ We must create systems that establish reusable design patterns and also accurate
     <li>Final interface</li>
     </ul>
   </div>
+  <div>
+  <p>look our project example about atomic design, just add content and render a template, check out the storybook and examples, let's try now</p>
+<img src="https://i.postimg.cc/8zM32Y71/Captura-de-Pantalla-2022-11-22-a-la-s-02-45-46.png" alt="atom_design_img" height="300px"/>
+  
+  </div>
+
 </details>
