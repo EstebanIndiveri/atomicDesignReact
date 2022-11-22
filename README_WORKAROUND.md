@@ -33,6 +33,7 @@ The five stages of atomic design are:
 <div style="text-align:justify; margin-top:30px">
 
 Storybook is a JavaScript tool that allows developers to create organized UI systems making both the building process and documentation more efficient and easier to use.
+
 <img src="https://www.freecodecamp.org/news/content/images/2020/06/loneley-planet-storybook-example.jpg" height="300px" alt="UI"/>
 
 <p>
