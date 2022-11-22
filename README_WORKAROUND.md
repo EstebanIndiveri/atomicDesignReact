@@ -11,7 +11,7 @@
 The five stages of atomic design are:
 <ul>
 
-<!-->TODO: link this href with final link to github component<-->
+<!-- TODO: link this href with final link to github component -->
 <li>Atoms</li>
 <li>Molecules</li>
 <li>Organisms</li>
