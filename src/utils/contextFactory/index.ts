@@ -7,27 +7,25 @@ export default <State, Action extends ActionWithType>(
   reducer: Reducer<State, Action>,
   initialState: State
 ) => {
-  const StateContext = createContext<State>({ ...initialState });
-  // eslint-disable-next-line @typescript-eslint/no-empty-function, no-empty-function
-  const DispatchContext = createContext<Dispatch<Action>>((() => {}) as Dispatch<Action>);
+  const stateContext = createContext<State>({ ...initialState });
+  const dispatchContext = createContext<Dispatch<Action>>((() => undefined) as Dispatch<Action>);
 
   const useSelector = <T>(selector: (arg: State) => T) => {
-    const state = useContext(StateContext);
+    const state = useContext(stateContext);
     return selector(state);
   };
 
   const useDispatch = () => {
-    const dispatch = useContext(DispatchContext);
+    const dispatch = useContext(dispatchContext);
     return dispatch;
   };
 
   const withContextProvider = withProvider({
-    stateContext: StateContext,
-    dispatchContext: DispatchContext,
+    stateContext,
+    dispatchContext,
     reducer,
     initialState
   });
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  return { withContextProvider, useSelector, useDispatch, StateContext, DispatchContext };
+  return { withContextProvider, useSelector, useDispatch, stateContext, dispatchContext };
 };

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { StateContext } from 'contexts/UserContext';
+import { stateContext as StateContext } from 'contexts/UserContext';
 import { UserState } from 'contexts/UserContext/reducer';
 
 import PATHS from './paths';

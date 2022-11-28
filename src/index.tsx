@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
+import { AppContextProvider } from 'contexto/store';
 import 'scss/application.scss';
-
 import 'config/i18n';
 import App from 'components/App';
 
@@ -18,9 +18,11 @@ const root = createRoot(rootElement);
 
 const renderApp = () => {
   root.render(
-    <StrictMode>
-      <App />
-    </StrictMode>
+    <AppContextProvider>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </AppContextProvider>
   );
 };
 

@@ -6,6 +6,6 @@ export const {
   useSelector,
   withContextProvider,
   useDispatch,
-  DispatchContext,
-  StateContext
+  dispatchContext,
+  stateContext
 } = contextFactory(reducer, INITIAL_STATE);

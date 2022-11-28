@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 import { INITIAL_STATE } from './reducer';
 
-import { useSelector, useDispatch, StateContext, DispatchContext } from '.';
+import { useSelector, useDispatch, stateContext, dispatchContext } from '.';
 
 describe('When wrapping a component with the context', () => {
   test('useSelector returns the state', () => {
@@ -15,10 +15,10 @@ describe('When wrapping a component with the context', () => {
   test('Context contains the initial value', () => {
     const {
       result: { current: stateContextValue }
-    } = renderHook(() => useContext(StateContext));
+    } = renderHook(() => useContext(stateContext));
     const {
       result: { current: dispatchContextValue }
-    } = renderHook(() => useContext(DispatchContext));
+    } = renderHook(() => useContext(dispatchContext));
     expect(stateContextValue).toEqual(INITIAL_STATE);
     expect(dispatchContextValue).toBeTruthy();
   });
@@ -29,7 +29,7 @@ describe('When wrapping a component with the context', () => {
     } = renderHook(() => useDispatch());
     const {
       result: { current: dispatchContextValue }
-    } = renderHook(() => useContext(DispatchContext));
+    } = renderHook(() => useContext(dispatchContext));
     expect(hookDispatch).toEqual(dispatchContextValue);
   });
 });
