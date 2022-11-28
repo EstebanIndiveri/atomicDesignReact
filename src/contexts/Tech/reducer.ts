@@ -1,18 +1,12 @@
 import { produce } from 'immer';
 import { Reducer } from 'react';
 
-import { Action } from 'interfaces/techInterface';
+import { Action, HomeState } from 'interfaces/techInterface';
 
 import { ActionTypes } from './types';
 
-export interface HomeState {
-  tech: string;
-  stranger?: string;
-}
-
 export const INITIAL_STATE = {
-  tech: 'React',
-  stranger: 'hola'
+  tech: 'React'
 };
 export const reducer: Reducer<HomeState, Action> = produce((draft, action) => {
   switch (action.type) {
@@ -24,6 +18,7 @@ export const reducer: Reducer<HomeState, Action> = produce((draft, action) => {
       draft.tech = '';
       break;
     }
-    // no default
+    default:
+      break;
   }
 }, INITIAL_STATE);

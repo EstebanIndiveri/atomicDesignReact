@@ -10,3 +10,8 @@ export interface ResetTech {
 }
 
 export type Action = SetTech | ResetTech;
+
+export interface HomeState {
+  tech: string;
+  stranger?: string;
+}

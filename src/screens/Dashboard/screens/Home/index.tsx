@@ -32,6 +32,7 @@ const Home = () => {
   // Example of how to use these custom hooks
   const tech = useSelector((state) => state.tech);
   const dispatch = useDispatch();
+
   const userDispatch = useUserDispatch();
   const { register, handleSubmit } = useForm<TechForm>();
 
