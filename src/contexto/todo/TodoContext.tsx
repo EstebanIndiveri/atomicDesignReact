@@ -7,4 +7,6 @@ export type TodoContextProps = {
   toggleTodo: (id: string) => void;
 };
 
-export const TodoContext = createContext<TodoContextProps>({} as TodoContextProps);
+export const TodoContext = createContext<TodoContextProps>(
+  {} as TodoContextProps
+);

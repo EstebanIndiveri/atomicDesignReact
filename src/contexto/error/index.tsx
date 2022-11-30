@@ -1,4 +1,9 @@
-import React, { createContext, useReducer, useContext, PropsWithChildren } from 'react';
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  PropsWithChildren
+} from 'react';
 
 import { errorReducer, initialErrorState } from './reducer';
 import { clearGeneralErrorAction, setGeneralErrorAction } from './actions';
@@ -9,10 +14,15 @@ interface ErrorContextInterface {
   setError: (error: GeneralErrorModel) => void;
   clearError: () => void;
 }
-const ErrorContext = createContext<ErrorContextInterface>({} as ErrorContextInterface);
-export const useErrorContext = (): ErrorContextInterface => useContext(ErrorContext);
+const ErrorContext = createContext<ErrorContextInterface>(
+  {} as ErrorContextInterface
+);
+export const useErrorContext = (): ErrorContextInterface =>
+  useContext(ErrorContext);
 // eslint-disable-next-line @typescript-eslint/naming-convention
-export const ErrorContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
+export function ErrorContextProvider({
+  children
+}: PropsWithChildren): JSX.Element {
   const [state, dispatch] = useReducer(errorReducer, initialErrorState);
   const setError = (error: GeneralErrorModel): void => {
     setGeneralErrorAction(error, dispatch);
@@ -20,5 +30,9 @@ export const ErrorContextProvider = ({ children }: PropsWithChildren): JSX.Eleme
   const clearError = (): void => {
     clearGeneralErrorAction(dispatch);
   };
-  return <ErrorContext.Provider value={{ state, setError, clearError }}>{children}</ErrorContext.Provider>;
-};
+  return (
+    <ErrorContext.Provider value={{ state, setError, clearError }}>
+      {children}
+    </ErrorContext.Provider>
+  );
+}

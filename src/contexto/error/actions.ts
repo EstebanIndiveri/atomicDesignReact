@@ -15,7 +15,9 @@ export const setGeneralErrorAction = (
     payload: error
   });
 };
-export const clearGeneralErrorAction = (dispatch: (action: ClearGeneralErrorAction) => void): void => {
+export const clearGeneralErrorAction = (
+  dispatch: (action: ClearGeneralErrorAction) => void
+): void => {
   dispatch({
     type: CLEAR_GENERAL_ERROR
   });

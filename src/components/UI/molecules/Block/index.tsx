@@ -6,7 +6,12 @@ import Card from 'components/UI/atoms/Card';
 import { BlockInterface } from 'interfaces/blockInterface';
 
 const buttonType = 'button';
-export default function Block({ className, children, title, button }: BlockInterface) {
+export default function Block({
+  className,
+  children,
+  title,
+  button
+}: BlockInterface) {
   return (
     <Card className={className}>
       <Title>{title}</Title>

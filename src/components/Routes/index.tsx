@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes as RoutesSwitch, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes as RoutesSwitch,
+  Route,
+  Navigate
+} from 'react-router-dom';
 
 import { useSelector } from 'contexts/UserContext';
 import Dashboard from 'screens/Dashboard';
@@ -21,7 +26,13 @@ function Routes() {
                 <Route
                   key={path}
                   path={path}
-                  element={redirectTo?.(user) ? <Navigate to={redirectTo?.(user) as string} /> : element}
+                  element={
+                    redirectTo?.(user) ? (
+                      <Navigate to={redirectTo?.(user) as string} />
+                    ) : (
+                      element
+                    )
+                  }
                   {...config}
                 />
               ))}

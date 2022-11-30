@@ -16,7 +16,9 @@ describe('Home component', () => {
     const logout = jest.fn();
     const removeCurrentUserToken = jest.fn();
     jest.spyOn(AuthService, 'logout').mockImplementationOnce(logout);
-    jest.spyOn(AuthService, 'removeCurrentUserToken').mockImplementationOnce(removeCurrentUserToken);
+    jest
+      .spyOn(AuthService, 'removeCurrentUserToken')
+      .mockImplementationOnce(removeCurrentUserToken);
 
     render(<Home />);
 
@@ -33,7 +35,9 @@ describe('Home component', () => {
     userEvent.type(screen.getByPlaceholderText(/Home:newTech/), 'Angular');
     userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
     await waitFor(() => {
-      expect(screen.getByText(/Home:techIs {"tech":"Angular"}/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Home:techIs {"tech":"Angular"}/)
+      ).toBeInTheDocument();
     });
   });
 
@@ -41,7 +45,9 @@ describe('Home component', () => {
     render(<Home />);
     userEvent.click(screen.getByRole('button', { name: /Home:setNewTech/ }));
     await waitFor(() => {
-      expect(screen.getByText(/Home:techIs {"tech":"React"}/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Home:techIs {"tech":"React"}/)
+      ).toBeInTheDocument();
     });
   });
 
@@ -57,7 +63,9 @@ describe('Home component', () => {
 
     const { rerender } = render(<Home />);
 
-    const logoutButton = screen.getByRole('button', { name: /Home:changeLang/ });
+    const logoutButton = screen.getByRole('button', {
+      name: /Home:changeLang/
+    });
     // Calls once for first lang change to "en"
     userEvent.click(logoutButton);
     await waitFor(() => expect(changeLanguage).toHaveBeenCalledWith('en'));

@@ -65,7 +65,10 @@ describe('when there is a current user', () => {
 });
 
 test('#login with a valid password returns a promise with a user id and token', async () => {
-  const response = (await login({ username: 'john.doe', password: '12345678' })) as ApiResponse<User>;
+  const response = (await login({
+    username: 'john.doe',
+    password: '12345678'
+  })) as ApiResponse<User>;
   // eslint-disable-next-line no-magic-numbers
   expect(response.data?.id).toBe(1234);
   expect(response.data?.sessionToken).toBe('token');
@@ -73,7 +76,10 @@ test('#login with a valid password returns a promise with a user id and token', 
 
 // TODO: This test exists to complete coverage. After unmocking the AuthService it can be erased
 test('#login with an invalid password returns a promise with a user id and and invalid token', async () => {
-  const response = (await login({ username: 'john.doe', password: 'asd1' })) as ApiResponse<User>;
+  const response = (await login({
+    username: 'john.doe',
+    password: 'asd1'
+  })) as ApiResponse<User>;
   // eslint-disable-next-line no-magic-numbers
   expect(response.data?.id).toBe(1234);
   expect(response.data?.sessionToken).toBe('invalid');

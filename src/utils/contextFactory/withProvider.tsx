@@ -13,12 +13,18 @@ interface Props<State, Action> {
 
 // {} is valid as props
 // eslint-disable-next-line @typescript-eslint/ban-types
-const withProvider = <ComponentProps extends {}, State, Action extends ActionWithType>({
+const withProvider = <
+  ComponentProps extends {},
+  State,
+  Action extends ActionWithType
+>({
   stateContext: StateContext,
   dispatchContext: DispatchContext,
   reducer,
   initialState
-}: Props<State, Action>) => (WrappedComponent: ComponentType<ComponentProps>) => {
+}: Props<State, Action>) => (
+  WrappedComponent: ComponentType<ComponentProps>
+) => {
   function ProviderWrapper(props: ComponentProps) {
     // TODO: Validate singleton?
     const [state, dispatch] = useReducer(reducer, initialState);

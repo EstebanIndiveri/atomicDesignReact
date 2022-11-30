@@ -8,7 +8,9 @@ export default <State, Action extends ActionWithType>(
   initialState: State
 ) => {
   const stateContext = createContext<State>({ ...initialState });
-  const dispatchContext = createContext<Dispatch<Action>>((() => undefined) as Dispatch<Action>);
+  const dispatchContext = createContext<Dispatch<Action>>(
+    (() => undefined) as Dispatch<Action>
+  );
 
   const useSelector = <T>(selector: (arg: State) => T) => {
     const state = useContext(stateContext);
@@ -27,5 +29,11 @@ export default <State, Action extends ActionWithType>(
     initialState
   });
 
-  return { withContextProvider, useSelector, useDispatch, stateContext, dispatchContext };
+  return {
+    withContextProvider,
+    useSelector,
+    useDispatch,
+    stateContext,
+    dispatchContext
+  };
 };

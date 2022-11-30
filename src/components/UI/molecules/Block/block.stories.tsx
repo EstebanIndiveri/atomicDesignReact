@@ -18,7 +18,12 @@ export default {
   }
 } as ComponentMeta<typeof Block>;
 
-const template: ComponentStory<typeof Block> = ({ title, button, className, children }) => (
+const template: ComponentStory<typeof Block> = ({
+  title,
+  button,
+  className,
+  children
+}) => (
   <Block title={title} button={button} className={className}>
     <p>{children}</p>
   </Block>

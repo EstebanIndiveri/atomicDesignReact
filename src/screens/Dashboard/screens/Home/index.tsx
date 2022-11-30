@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 
@@ -53,7 +52,7 @@ const Home = () => {
   });
 
   return (
-    <Fragment>
+    <>
       <Todo />
       <button type="button" onClick={showError}>
         press me
@@ -75,15 +74,23 @@ const Home = () => {
               {t('Home:setNewTech')}
             </button>
           </form>
-          <button type="button" onClick={handleChangeLanguage} className={`m-bottom-4 ${styles.appLink}`}>
+          <button
+            type="button"
+            onClick={handleChangeLanguage}
+            className={`m-bottom-4 ${styles.appLink}`}
+          >
             {t('Home:changeLang')}
           </button>
-          <button type="button" className={styles.appLink} onClick={handleLogout}>
+          <button
+            type="button"
+            className={styles.appLink}
+            onClick={handleLogout}
+          >
             {t('Home:logout')}
           </button>
         </header>
       </div>
-    </Fragment>
+    </>
   );
 };
 

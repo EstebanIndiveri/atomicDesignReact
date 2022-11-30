@@ -6,7 +6,11 @@ interface Props {
 }
 
 function Suspense({ fallback, children }: Props) {
-  return <ReactSuspense fallback={fallback || <div>Loading...</div>}>{children}</ReactSuspense>;
+  return (
+    <ReactSuspense fallback={fallback || <div>Loading...</div>}>
+      {children}
+    </ReactSuspense>
+  );
 }
 
 export default Suspense;

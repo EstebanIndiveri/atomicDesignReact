@@ -25,32 +25,44 @@ export const setCurrentUserToken = (currentUser: User) => {
   LocalStorageService.setValue(TOKEN_FIELD_NAME, currentUser.sessionToken);
 };
 
-export const getCurrentUserToken = () => LocalStorageService.getValue(TOKEN_FIELD_NAME);
+export const getCurrentUserToken = () =>
+  LocalStorageService.getValue(TOKEN_FIELD_NAME);
 
-export const removeCurrentUserToken = () => LocalStorageService.removeValue(TOKEN_FIELD_NAME);
+export const removeCurrentUserToken = () =>
+  LocalStorageService.removeValue(TOKEN_FIELD_NAME);
 
-export const login = (credentials: Credentials): Promise<ApiResponse<User, LoginError>> =>
+export const login = (
+  credentials: Credentials
+): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
   // api.post('/login', credentials);
   new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         ok: true,
-        data: { sessionToken: credentials.password === 'asd1' ? 'invalid' : 'token', id: 1234 },
+        data: {
+          sessionToken: credentials.password === 'asd1' ? 'invalid' : 'token',
+          id: 1234
+        },
         problem: null,
         originalError: null
       });
     }, TIMEOUT_TIME);
   });
 
-export const signup = (user: RegistrationUser): Promise<ApiResponse<User, LoginError>> =>
+export const signup = (
+  user: RegistrationUser
+): Promise<ApiResponse<User, LoginError>> =>
   // TODO: Implement call to authentication API here
   // api.post('/sign_up', credentials);
   new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         ok: true,
-        data: { sessionToken: user.password === 'asd1' ? 'invalid' : 'token', id: 1234 },
+        data: {
+          sessionToken: user.password === 'asd1' ? 'invalid' : 'token',
+          id: 1234
+        },
         problem: null,
         originalError: null
       });

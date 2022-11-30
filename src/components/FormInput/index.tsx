@@ -45,7 +45,9 @@ function FormInput({
 }: Props) {
   const InputComponent = isTextarea ? 'textarea' : 'input';
   const showError =
-    (touched === undefined || touched) && error && (submitCount === undefined || submitCount > 0);
+    (touched === undefined || touched) &&
+    error &&
+    (submitCount === undefined || submitCount > 0);
 
   return (
     <div className={`column start ${className}`}>
@@ -55,7 +57,9 @@ function FormInput({
         </label>
       )}
       <InputComponent
-        className={`${inputClassName} ${styles.input} ${showError ? styles.error : ''}`}
+        className={`${inputClassName} ${styles.input} ${
+          showError ? styles.error : ''
+        }`}
         name={name}
         id={name}
         type={inputType}
@@ -71,7 +75,9 @@ function FormInput({
         id={`${name}-error`}
         role="alert"
         aria-hidden={!showError}
-        className={`${errorClassName} ${styles.errorText} ${showError ? styles.visible : ''}`}
+        className={`${errorClassName} ${styles.errorText} ${
+          showError ? styles.visible : ''
+        }`}
       >
         {error}
       </span>

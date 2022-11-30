@@ -11,7 +11,9 @@ import reportWebVitals from './reportWebVitals';
 const rootElement = document.getElementById('root');
 
 if (rootElement === null) {
-  throw new Error('Root element could not be found, it needs to be different than null');
+  throw new Error(
+    'Root element could not be found, it needs to be different than null'
+  );
 }
 
 const root = createRoot(rootElement);

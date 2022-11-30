@@ -2,7 +2,9 @@ type Storage = { [index: string]: string | undefined };
 const tempStorage: Storage = {};
 
 const getEncodedFieldName = (key: string) =>
-  window.btoa(`@@${'boilerplate-react'.replace(/-/g, '_').toUpperCase()}:${key}`);
+  window.btoa(
+    `@@${'boilerplate-react'.replace(/-/g, '_').toUpperCase()}:${key}`
+  );
 
 const getValue = (key: string) => {
   const encodedKey = getEncodedFieldName(key);

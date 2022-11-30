@@ -8,7 +8,8 @@ jest.mock('react-i18next', () => ({
     init: () => {}
   },
   useTranslation: () => ({
-    t: (key: string, params: Record<string, string>) => (params ? `${key} ${JSON.stringify(params)}` : key),
+    t: (key: string, params: Record<string, string>) =>
+      params ? `${key} ${JSON.stringify(params)}` : key,
     i18n: {
       changeLanguage: jest.fn(),
       language: 'es'
