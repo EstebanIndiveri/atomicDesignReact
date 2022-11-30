@@ -403,9 +403,6 @@
   "project": "./tsconfig.json"
 },
 "plugins": [
-  "react",
-  "@typescript-eslint",
-  "prettier",
   "testing-library"
 ],
 "rules": {
